@@ -1,0 +1,49 @@
+{ 
+    "books": [
+    {
+        "id": 1,
+        "title": "Little Women",
+        "author": "Louisa May Alcott",
+        "cover": "",
+        "about": "Sister learn to live in gratitude for each other.",
+        "variation": 0,
+        "favorite": true
+    }, 
+    {
+        "id": 2,
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "cover": "",
+        "about": "Enter a dystopian future when books with ideas are dangerous, controlled and burned.",
+        "variation": 1,
+        "favorite": false
+    }, 
+    {
+        "id": 3,
+        "title": "Grapes of Wrath",
+        "author": "John Steinbeck",
+        "cover": "",
+        "about": "Thousands set out from the dust bowl to California in search of better fortunes",
+        "variation": 2,
+        "favorite": false
+    }, 
+    {
+        "id": 4,
+        "title": "Grapes of Wrath",
+        "author": "John Steinbeck",
+        "cover": "",
+        "about": "Thousands set out from the dust bowl to California in search of better fortunes",
+        "variation": 3,
+        "favorite": true
+    }, 
+    {
+        "id": 5,
+        "title": "Grapes of Wrath",
+        "author": "John Steinbeck",
+        "cover": "",
+        "about": "Thousands set out from the dust bowl to California in search of better fortunes",
+        "variation": 4,
+        "favorite": false
+    }
+]
+}
