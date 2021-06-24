@@ -1,15 +1,39 @@
+<!-- ///////////////////////// 
+///////// script ////////////
+///////////////////////////// -->
 <script>
-    import BookCover from "./common/BookCover.svelte"
-    import Heart from "./Heart.svelte"
+    import BookCover from "./common/BookCover.svelte";
+    import Heart from "./Heart.svelte";
+    import ButtonComments from "./common/ButtonComment.svelte";
 
     export let books;
 </script>
 
+<!-- ///////////////////////// 
+///////// display ///////////
+///////////////////////////// -->
+<ul>
+    {#each books as book}
+        <li>
+            <BookCover interactive {book} />
+            <ButtonComments />
+            {#if book.favorite}
+                <div class="heart">
+                    <Heart />
+                </div>
+            {/if}
+        </li>
+    {/each}
+</ul>
+
+<!-- ///////////////////////// 
+////////// style ////////////
+///////////////////////////// -->
 <style>
     ul {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         grid-auto-rows: 16.8rem;
         gap: var(--spacingMedium);
         list-style: none;
@@ -26,16 +50,3 @@
         right: calc(-1 * var(--spacingSmall));
     }
 </style>
-
-<ul>
-{#each books as book}
-    <li>
-        <BookCover interactive {book} />
-        {#if book.favorite}
-            <div class="heart">
-                <Heart />
-            </div>
-        {/if}
-    </li>
-{/each}
-</ul>

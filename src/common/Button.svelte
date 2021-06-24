@@ -1,9 +1,28 @@
+<!-- ///////////////////////// 
+///////// script ////////////
+///////////////////////////// -->
 <script>
-    import { links } from "svelte-routing"
+    import { links } from "svelte-routing";
 
     export let to;
 </script>
 
+<!-- ///////////////////////// 
+///////// display ///////////
+///////////////////////////// -->
+{#if to}
+    <a href={to} on:click use:links class="button">
+        <slot />
+    </a>
+{:else}
+    <button on:click class="button">
+        <slot />
+    </button>
+{/if}
+
+<!-- ///////////////////////// 
+////////// style ////////////
+///////////////////////////// -->
 <style>
     .button {
         background: var(--colorCta);
@@ -31,13 +50,3 @@
         text-decoration: none;
     }
 </style>
-
-{#if to}
-    <a href={to} on:click use:links class="button">
-        <slot />
-    </a>
-{:else}
-<button on:click class="button">
-    <slot />
-</button>
-{/if}

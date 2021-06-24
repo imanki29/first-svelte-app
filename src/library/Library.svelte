@@ -1,16 +1,22 @@
+<!-- ///////////////////////// 
+///////// script ////////////
+///////////////////////////// -->
 <script>
     import { onMount } from "svelte";
     import BookGrid from "../BookGrid.svelte";
     import Button from "../common/Button.svelte";
     import { httpGet } from "../common/api.js";
 
-    let books = []
+    let books = [];
     onMount(async function () {
-       const { data } = await httpGet("/?_sort=id&_order=desc"); 
-       books = data
-    })
+        const { data } = await httpGet("/?_sort=id&_order=desc");
+        books = data;
+    });
 </script>
 
+<!-- ///////////////////////// 
+///////// display ///////////
+///////////////////////////// -->
 <header>
     <span class="preamble">Welcome to the</span>
     <h1>Library</h1>
@@ -22,8 +28,11 @@
 
 <Button to="/create">+ Add Book</Button>
 
-<BookGrid books={books} />
+<BookGrid {books} />
 
+<!-- ///////////////////////// 
+///////////// style ///////// 
+///////////////////////////// -->
 <style>
     header {
         margin: var(--spacingMedium) 0 var(--spacingLarge) 0;
